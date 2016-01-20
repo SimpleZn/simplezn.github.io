@@ -1,2 +1,1 @@
-# simplezn.github.io
-simplezn blog
+record something

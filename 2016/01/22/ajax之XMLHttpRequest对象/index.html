@@ -6,21 +6,18 @@
   <title>ajax之XMLHttpRequest对象 - SimpleZn&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Ajax指的是一种JavaScript在浏览器中的使用方法。它通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。
-XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。
-123">
+XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajax之XMLHttpRequest对象">
 <meta property="og:url" content="http://simplezn.site/2016/01/22/ajax之XMLHttpRequest对象/index.html">
 <meta property="og:site_name" content="SimpleZn's Blog">
 <meta property="og:description" content="Ajax指的是一种JavaScript在浏览器中的使用方法。它通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。
-XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。
-123">
-<meta property="og:updated_time" content="2016-01-22T08:35:33.691Z">
+XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。">
+<meta property="og:updated_time" content="2016-01-25T10:02:49.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax之XMLHttpRequest对象">
 <meta name="twitter:description" content="Ajax指的是一种JavaScript在浏览器中的使用方法。它通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。
-XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。
-123">
+XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -83,6 +80,7 @@ XMLHttpRequest对象XMLHttpRequest对象用来在浏览器与服务器之间传�
       
         <p>Ajax指的是一种JavaScript在浏览器中的使用方法。它通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。</p>
 <h3 id="XMLHttpRequest_u5BF9_u8C61"><a href="#XMLHttpRequest_u5BF9_u8C61" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h3><p>XMLHttpRequest对象用来在浏览器与服务器之间传送数据。XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。</p>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新建一个XMLHttpRequest对象</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">// 指定通信状态变化时的回调</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通信成功时，状态值为4</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.error(xhr.statusText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(xhr.statusText);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// open方式用于指定HTTP动词、请求的网址、是否同步</span></span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'/endpoint'</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 发送http请求</span></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <h3 id="XMLHttpRequest_u5B9E_u4F8B_u5C5E_u6027"><a href="#XMLHttpRequest_u5B9E_u4F8B_u5C5E_u6027" class="headerlink" title="XMLHttpRequest实例属性"></a>XMLHttpRequest实例属性</h3><p>1、<strong>readyState</strong></p>
 <p>readyState只读属性，用一个整数和对应的常量，表示XMLHttpRequest请求当前所在的状态。</p>

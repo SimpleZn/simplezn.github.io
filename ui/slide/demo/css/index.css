@@ -1,0 +1,58 @@
+
+/* reset */
+body, ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* slide */
+
+.banner {
+	position: relative;
+	width: 1200px;
+	height: 360px;
+	overflow: hidden;
+}
+
+.slide_content {
+	position: relative;
+}
+
+.pannel_content {
+	width: 1200px;
+	float: left;
+}
+
+.tab_list {
+    width: 140px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+}
+
+.tab_list li {
+	float: left;
+	margin-left: 10px;
+}
+
+.tab_list li a {
+	color: #fff;
+}
+
+.tab_list li a.selected {
+	color: #ff6900;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js对象之属性类型 - SimpleZn&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对象：无序属性的集合，其属性可以包含基本值、对象或者函数。
+属性类型ECMA-262 第5版在定义只有内部才用的特性时，描述了属性的各种特征。在JavaScript中不能直接访问它们。
+1、数据属性
+
+[[Configurable]] 表示是否能通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。 默认值为true
+
+[[Enumerable]]  表示能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js对象之属性类型">
+<meta property="og:url" content="http://simplezn.site/2016/01/28/js对象之属性类型/index.html">
+<meta property="og:site_name" content="SimpleZn's Blog">
+<meta property="og:description" content="对象：无序属性的集合，其属性可以包含基本值、对象或者函数。
+属性类型ECMA-262 第5版在定义只有内部才用的特性时，描述了属性的各种特征。在JavaScript中不能直接访问它们。
+1、数据属性
+
+[[Configurable]] 表示是否能通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。 默认值为true
+
+[[Enumerable]]  表示能">
+<meta property="og:updated_time" content="2016-03-04T08:14:39.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js对象之属性类型">
+<meta name="twitter:description" content="对象：无序属性的集合，其属性可以包含基本值、对象或者函数。
+属性类型ECMA-262 第5版在定义只有内部才用的特性时，描述了属性的各种特征。在JavaScript中不能直接访问它们。
+1、数据属性
+
+[[Configurable]] 表示是否能通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。 默认值为true
+
+[[Enumerable]]  表示能">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://simplezn.site"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-js对象之属性类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js对象之属性类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/28/js对象之属性类型/" class="article-date">
+  <time datetime="2016-01-27T16:00:00.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对象：无序属性的集合，其属性可以包含基本值、对象或者函数。</p>
+<h3 id="u5C5E_u6027_u7C7B_u578B"><a href="#u5C5E_u6027_u7C7B_u578B" class="headerlink" title="属性类型"></a>属性类型</h3><p>ECMA-262 第5版在定义只有内部才用的特性时，描述了属性的各种特征。在JavaScript中不能直接访问它们。</p>
+<p>1、<strong>数据属性</strong></p>
+<ul>
+<li><p>[[Configurable]]<br> 表示是否能通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。<br> 默认值为true</p>
+</li>
+<li><p>[[Enumerable]]<br>  表示能否通过for-in循环返回属性。默认值为true</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>[[Writable]]<br>  表示能否修改属性的值。默认为true</p>
+</li>
+<li><p>[[value]]<br>  包含这个属性的数据值。读取值时，从这里读；写入时，把新值保存在这个位置。默认为undefined</p>
+</li>
+</ul>
+<p>2、<strong>修改属性特性</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(obj, property, descriptor)</span><br></pre></td></tr></table></figure></p>
+<p>只能使用ES5的方法，三个参数：属性所在的对象、属性的名字和一个描述符对象。其中描述符对象的属性必须是configurable、enumberable、writable和value。设置其中的一个或多个值，可以修改对应的特性值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">'name'</span>, &#123;</span><br><span class="line">	writable: <span class="literal">false</span>,</span><br><span class="line">	value: <span class="string">'zn'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 只读，这个属性的值是不可修改的，如果尝试为它指定新值，在非严格模式下，赋值操作将被忽略；严格模式下，赋值操作将会导致抛出错误。</span></span><br></pre></td></tr></table></figure>
+<p>把configurable设置为false，表示不能从对象中删除属性。如果对这个属性调用delete，则在非严格模式下什么也不会发生。而且，一旦把属性定义为不可配置的，就不能再把它变回可以配置的了。此时，再调用修改特性的方法，都会导致错误。</p>
+<p>在调用Object.defineProperty()方法时，如果不指定，configurable、enumberable 和 writable特性的默认值都是false。</p>
+<p>3、<strong>访问器属性</strong><br>访问器属性不包含数据值；它们包含一对儿getter和setter函数（非必须）。在读取访问器时，会调用getter函数，这个函数负责返回有效的值；在写入访问器属性时，会调用setter函数并传入新值，这个函数负责决定如何处理数据。</p>
+<ul>
+<li>[[Configurable]]</li>
+<li>[[Enumberable]]</li>
+<li>[[Get]] : 在读取属性时调用的函数。默认为 undefined</li>
+<li>[[Set]] : 在写入属性时调用的函数。默认为 undefined</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">	_year: <span class="number">2004</span>,</span><br><span class="line">	edition: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(book, <span class="string">'year'</span>, &#123;</span><br><span class="line">	get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>._year;</span><br><span class="line">	&#125;,</span><br><span class="line">    set: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (newValue &gt; <span class="number">2004</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>._year = newValue;</span><br><span class="line">            <span class="keyword">this</span>.edition += newValue - <span class="number">2004</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">book.year = <span class="number">2005</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obok.edition);</span><br></pre></td></tr></table></figure>
+<p>以上代码创建了一个book对象，并给它定义两个默认的属性：下划线year 和 edition。这时访问器属性的常见方式，即设置一个属性的值会导致其他属性发生变化。</p>
+<p>4、<strong>定义多个属性</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties()</span><br></pre></td></tr></table></figure></p>
+<p>第一个参数是：添加和修改其属性的对象。第二个参数是：对象的属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperties(book, &#123;</span><br><span class="line">    _year: &#123;</span><br><span class="line">        value: <span class="number">2004</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    edition: &#123;</span><br><span class="line">        value: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    year: &#123;</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>._year;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        set: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (newValue &gt; <span class="number">2004</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>._year = newValue;</span><br><span class="line">                <span class="keyword">this</span>.edition += newValue - <span class="number">2004</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>5、<strong>读取属性的特性</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getOwnPropertyDescriptor(obj, property)</span><br></pre></td></tr></table></figure></p>
+<p>可以取得给定属性的描述符对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(book, <span class="string">'_year'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor.value);</span><br><span class="line"><span class="built_in">console</span>.log(descriptor.configurable);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="u5C5E_u6027_u64CD_u4F5C"><a href="#u5C5E_u6027_u64CD_u4F5C" class="headerlink" title="属性操作"></a>属性操作</h3><p>删除、检测、枚举<br>1、<strong>删除</strong><br>delete运算符可以删除对象的属性。</p>
+<p>delete只是断开属性与宿主对象的联系，而不会去操作属性中的属性。</p>
+<p>只能删除自有属性。</p>
+<p>当delete表达式删除成功或者没有任何副作用（比如删除不存在的属性）时，它返回true。</p>
+<p>delete不能删除那些可配置性为false的属性。</p>
+<p>2、<strong>检测</strong></p>
+<ul>
+<li><p>in运算符<br>左侧是属性名（字符串），右侧是对象。如果对象的自有属性或继承属性中包含这个属性则返回true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;x: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="string">'x'</span> <span class="keyword">in</span> o; <span class="comment">// true</span></span><br><span class="line"><span class="string">'y'</span> <span class="keyword">in</span> o; <span class="comment">// false</span></span><br><span class="line"><span class="string">'toString'</span> <span class="keyword">in</span> o; <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hasOwnProperty<br>用来检测给定的名字是否是对象的自有属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">o.hasOwnProperty(<span class="string">'x'</span>); <span class="comment">//true</span></span><br><span class="line">o.hasOwnProperty(<span class="string">'y'</span>); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>propertyIsEnumberable<br>是hasOwnProperty方法的增强版。只有检测到是自由属性且这个属性的可枚举性为true时，它才返回true。</p>
+</li>
+<li><p>!==<br>可以使用 ‘!==’判断一个属性是否是undefined。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;x: <span class="number">1</span>&#125;;</span><br><span class="line">o.y !== <span class="literal">undefined</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然而有一种场景只能使用in运算符而不能使用’!==’。in 可以区分不存在的属性和存在但值为undefined的属性。</p>
+<p>‘!==’ 可以区分undefined和null。有时则不必作这种区分。</p>
+<p>3、<strong>枚举、遍历</strong></p>
+<ul>
+<li><strong>for-in</strong><br>for-in循环可以遍历对象中所有可枚举的属性（包括自由属性和继承的属性）。</li>
+</ul>
+<p>对象继承的内置方法是不可枚举的，但在代码中给对象添加的属性都是可以枚举的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> p <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!o.hasOwnProperty(p)) &#123;</span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 跳过继承的属性（过滤）</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (p <span class="keyword">in</span> o) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> o[p] === <span class="string">'function'</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span>; <span class="comment">// 跳过方法</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>Object.keys 和 Object.getOwnpropertyNames</strong><br>ES5中定义了Object.keys()，它返回一个数组，这个数组由对象中可枚举的自有属性的名称组成。Object.getOwnpropertyNames()，返回对象的所有自有属性的名称，而不仅仅是可枚举的属性。</li>
+</ul>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/04/js对象之创建对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          js对象之创建对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/21/util/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">util模块常用工具类&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 SimpleZn&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

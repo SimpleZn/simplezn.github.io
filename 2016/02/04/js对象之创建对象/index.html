@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js对象之创建对象 - SimpleZn&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建对象1、对象字面量123var obj = &amp;#123;    a: 1&amp;#125;;
+2、构造函数12345678function Person(name, age, job) &amp;#123;    this.name = name;    this.job = job;    this.sayName = function() &amp;#123;        console.log(this.n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js对象之创建对象">
+<meta property="og:url" content="http://simplezn.site/2016/02/04/js对象之创建对象/index.html">
+<meta property="og:site_name" content="SimpleZn's Blog">
+<meta property="og:description" content="创建对象1、对象字面量123var obj = &amp;#123;    a: 1&amp;#125;;
+2、构造函数12345678function Person(name, age, job) &amp;#123;    this.name = name;    this.job = job;    this.sayName = function() &amp;#123;        console.log(this.n">
+<meta property="og:updated_time" content="2016-03-04T08:15:05.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js对象之创建对象">
+<meta name="twitter:description" content="创建对象1、对象字面量123var obj = &amp;#123;    a: 1&amp;#125;;
+2、构造函数12345678function Person(name, age, job) &amp;#123;    this.name = name;    this.job = job;    this.sayName = function() &amp;#123;        console.log(this.n">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://simplezn.site"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-js对象之创建对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js对象之创建对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/02/04/js对象之创建对象/" class="article-date">
+  <time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u521B_u5EFA_u5BF9_u8C61"><a href="#u521B_u5EFA_u5BF9_u8C61" class="headerlink" title="创建对象"></a>创建对象</h3><p>1、<strong>对象字面量</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>2、<strong>构造函数</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'zn'</span>, <span class="number">29</span>, <span class="string">'engineer'</span>);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<ul>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象（因此this就指向了这个新对象）</li>
+<li>执行构造函数中的代码（为这个新对象添加属性）</li>
+<li>返回新对象。</li>
+</ul>
+<p>构造函数与其他函数的唯一区别，就在于调用它们的方式不同。</p>
+<p>构造函数的主要问题：就是每个属性和方法都要在每个实例上重新创建一遍。</p>
+<p>3、<strong>Object.create()</strong><br>ES5中定义了Object.create()方法，用于创建一个新对象。第一个参数是这个对象的原型，第二个参数可选，用于对对象的属性作进一步的描述。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = <span class="built_in">Object</span>.create(&#123;x:<span class="number">1</span>, y:<span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>通过原型继承返回一个新对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inherit</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Object</span>.create) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.create(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;</span><br><span class="line">    <span class="keyword">if</span> (t !== <span class="string">'object'</span> &amp;&amp; t !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    f.prototype = p;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> f();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>inherit()函数的其中一个用途是防止库函数无意间修改那些不受你控制的对象。不是将对象直接作为参数传入函数，而是将它的继承对象传入函数。当函数读取继承对象的属性时，实际上读取的是继承过来的值。如果给继承对象的属性赋值，则这些属性只会影响到这个继承对象本身，而不是原始对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;a: <span class="number">1</span>&#125;;</span><br><span class="line">library_function(inherit(o));</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/17/js对象之继承/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          js对象之继承
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/28/js对象之属性类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js对象之属性类型&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 SimpleZn&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

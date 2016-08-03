@@ -1,1 +1,1 @@
-record something
+simplezn's Blog

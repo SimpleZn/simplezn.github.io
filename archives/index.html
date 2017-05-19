@@ -17,7 +17,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://localhost:4000/archives/">
+    <link rel="canonical" href="https://simplezn.top/archives/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -67,7 +67,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">SimpleZn</a>
+            <a class="navbar-brand" href="/">Simple</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,14 +97,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -174,6 +174,46 @@
 
 
 
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
+                    <span class="tag-text">2017</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    01-10
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/01/10/浅谈JavaScript中Promise的使用/" style="color: #0085a1">
+                        <span>
+                            浅谈JavaScript中Promise的使用
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    01-10
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/01/10/learn-promise/" style="color: #0085a1">
+                        <span>
+                            浅谈JavaScript中Promise的使用
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+
+                </ul>
+            </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-calendar-times-o listing-seperator" id="2016">
@@ -246,7 +286,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; SimpleZn 2017 
+                    Copyright &copy; Simple 2017 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                 </p>
@@ -300,7 +340,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://localhost:4000/js/jquery.tagcloud.js",function(){
+        async("https://simplezn.top/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -322,29 +362,13 @@
 <!-- Google Analytics -->
 
 
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'huangxuan.me';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
 
 
 <!-- Baidu Tongji -->
 
 <script>
     // dynamic User by Hux
-    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+    var _baId = '487dfb9c09f91b6f9cb772a024925673';
 
     // Originial
     var _hmt = _hmt || [];
@@ -364,7 +388,7 @@
 
 
 <!-- Image to hack wechat -->
-<img src="http://localhost:4000/img/icon_wechat.png" width="0" height="0" />
+<img src="https://simplezn.top/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

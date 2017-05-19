@@ -13,11 +13,11 @@
 
     <title>
         
-          SimpleZn的博客 | SimpleZn&#39;s Blog
+          SimpleZn | SimpleZn&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="simplezn.site/">
+    <link rel="canonical" href="http://localhost:4000/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -25,13 +25,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/hux-blog.min.css">
 
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
 
     <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China
@@ -67,7 +67,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">SIMPLE</a>
+            <a class="navbar-brand" href="/">SimpleZn</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,7 +90,7 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
@@ -98,6 +98,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -146,9 +153,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>SIMPLE</h1>
+                    <h1>SimpleZn</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">这个前端不太冷</span>
+                    <span class="subheading"></span>
                 </div>
             </div>
         </div>
@@ -177,7 +184,7 @@
 
 <div class="post-preview">
 
-    <a href="/2016/12/05/css-arrow-md/">
+    <a href="/2016/12/05/test/">
         <h2 class="post-title">
             用css实现三角箭头
         </h2>
@@ -189,62 +196,12 @@
 在开发中有时候会用到用CSS快速实现三角箭头，在此记录一下。本文将介绍如何用CSS写出三角箭头，以及会使用到的一些场景。原理比较简单，是利用border来进行一些设置。
 
 三角形当元素宽高为0，设置border宽度，其他边框为透明颜色时，可以形成一个三角形。
-&lt;div class="demo1"&gt;&lt;/div&gt;&lt;style type="text/css"&gt;......
+12345678910&lt;div class="demo1"&gt;&lt;/div&gt;&lt;style type="te......
         </div>
     </a>
     <p class="post-meta">
-        Posted by simplezn on
+        Posted by SimpleZn on
         2016-12-05
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/11/30/Promise/">
-        <h2 class="post-title">
-            Learn Promise
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-Promise是异步编程的一种解决方案，比传统的解决方案 - 回调函数和事件 - 更合理和更强大。简单来说Promise就是一个容器，里面保存着某个未来才会结束的异步操作的结果。从语法上说，Promise是一个对象，通过它可以获取异步操作的消息。ES6中，Promise是一个构造函数，用来生成Promise实例。（本文会在创建和使用过程中介绍其中的概念）
-
-创建var promise = ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by simplezn on
-        2016-11-30
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/08/03/command-not-found/">
-        <h2 class="post-title">
-            使用npm安装包提示‘commnd not found’
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-最近我在ubunbu下想要安装一个NPM包（以Gulp为例）。按照文档中的指示输入了对应的命令，但是在运行时却没有成功… 最终我找到了对应的问题和解决方法。
-
-npm install -g gulp
-安装成功了，但是当我运行gulp命令时，却提示 gulp:command not found 错误。原来原因是gulp安装完之后却没有在正确的位置。
-你可以使用下面命令 npm root 或者......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by simplezn on
-        2016-08-03
     </p>
 
 </div>
@@ -259,6 +216,10 @@ npm install -g gulp
     
 </ul>
 
+
+
+                <!-- 如果开启评论功能 -->
+                
 
             </div>
     <!-- Sidebar Container -->
@@ -275,14 +236,6 @@ npm install -g gulp
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
                         
                             
                         
@@ -304,11 +257,11 @@ npm install -g gulp
                         
 
                         <!-- SNS Link -->
-                        <ul class="list-inline hide">
+                        <ul class="list-inline">
                             
                             
                                 <li>
-                                    <a target="_blank" href="https://twitter.com/NingChang17">
+                                    <a target="_blank" href="https://twitter.com/zndream">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -346,7 +299,7 @@ npm install -g gulp
                 <ul class="list-inline">
 
                     
-                        <li><a href="http://ingf.github.io/" target="_blank">尹峰以为</a></li>
+                        <li><a href="https://ingf.github.io/" target="_blank">尹锋以为</a></li>
                     
                 </ul>
                 
@@ -366,7 +319,7 @@ npm install -g gulp
                 
                 
                     <li>
-                        <a target="_blank" href="https://twitter.com/NingChang17">
+                        <a target="_blank" href="https://twitter.com/zndream">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -395,7 +348,7 @@ npm install -g gulp
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; SIMPLE 2016 
+                    Copyright &copy; SimpleZn 2017 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                 </p>
@@ -449,7 +402,7 @@ npm install -g gulp
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("simplezn.site/js/jquery.tagcloud.js",function(){
+        async("http://localhost:4000/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -461,7 +414,7 @@ npm install -g gulp
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
@@ -471,9 +424,39 @@ npm install -g gulp
 <!-- Google Analytics -->
 
 
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
 
 
 <!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
 
 <!-- Side Catalog -->
@@ -483,7 +466,7 @@ npm install -g gulp
 
 
 <!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
+<img src="http://localhost:4000/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

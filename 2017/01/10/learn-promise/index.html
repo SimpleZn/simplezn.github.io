@@ -219,7 +219,7 @@
 <li>Resolved （已完成）</li>
 <li>Rejected  （已失败）</li>
 </ul>
-<p><img src="./es6-promise/promise.png" alt="promise status"></p>
+<p><img src="./learn-promise/promise.png" alt="promise status"></p>
 <p>Promise的状态变化只有上图两条路径，resolve 方法会使Promise对象由Pendding状态变为Resolved状态；reject 方法或者异常会使得Promise对象由pendding状态变为Rejected状态。</p>
 <p>对象状态一旦改变，任何时候都能得到这个结果。即状态一旦进入Resolved状态或者Rejected状态， Promise对象便不再出现状态变化，同时我们再添加回调会立即得到结果。这点跟事件不一样，事件是发生后再绑定监听，就监听不到了。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -244,8 +244,8 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promises = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> getData(id);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.all(promises).then(<span class="function"><span class="keyword">function</span>(<span class="params">valArr</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><strong>Promise.race</strong> 方法跟Promise.all方法差不多。唯一的区别在于该方法返回的Promise实例并不会等待所有Proimse都跑完，而是只要有一个Promise实例改变状态，它就跟着改变状态。并使用第一个改变状态实例的返回值作为返回值。</p>
-<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="./es6-promise/promise-desc.png" alt="promise 兼容性"></p>
-<p><img src="./es6-promise/promise-mobile.png" alt="promise 兼容性"></p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="./learn-promise/promise-desc.png" alt="promise 兼容性"></p>
+<p><img src="./learn-promise/promise-mobile.png" alt="promise 兼容性"></p>
 <p>Promise已经被写入ES6规范中。在上图中可以看到，各大浏览器（除IE外）都已开始支持原生Promise的使用。但是在低版本浏览器和运行环境中，并不支持Promise对象。要在这些环境中使用Promise，则需要借助一些兼容Promise的类库。ES6中的Promise规范来源于Promises/A+社区，因此，在选择类库时应该考虑对Promise/A+兼容性。Promise的Polyfill类库有很多，笔者经常使用的有(供参考)：</p>
 <p><a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="external">es6-promise</a></p>
 <p><a href="https://github.com/petkaantonov/bluebird" target="_blank" rel="external">bluebird</a></p>
@@ -260,7 +260,7 @@
                     
                     
                         <li class="next">
-                            <a href="/2017/01/10/浅谈JavaScript中Promise的使用/" data-toggle="tooltip" data-placement="top" title="浅谈JavaScript中Promise的使用">Next Post &rarr;</a>
+                            <a href="/2016/12/05/test/" data-toggle="tooltip" data-placement="top" title="用css实现三角箭头">Next Post &rarr;</a>
                         </li>
                     
                 </ul>

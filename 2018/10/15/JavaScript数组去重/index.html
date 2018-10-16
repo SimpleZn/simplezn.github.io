@@ -13,11 +13,11 @@
 
     <title>
         
-          用css实现三角箭头 - SimpleZn | SimpleZn&#39;s Blog
+          JavaScript数组去重 - SimpleZn | SimpleZn&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://simplezn.top/2016/12/05/test/">
+    <link rel="canonical" href="https://simplezn.top/2018/10/15/JavaScript数组去重/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -155,7 +155,7 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('css-arrow.jpg')
+        background-image: url('/img/home-bg.png')
     }
 </style>
 <header class="intro-header" >
@@ -165,14 +165,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#css" title="css">css</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#Array" title="Array">Array</a>
                         
                     </div>
-                    <h1>用css实现三角箭头</h1>
+                    <h1>JavaScript数组去重</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by SimpleZn on
-                        2016-12-05
+                        2018-10-15
                     </span>
                 </div>
             </div>
@@ -191,17 +193,13 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>在开发中有时候会用到用CSS快速实现三角箭头，在此记录一下。本文将介绍如何用CSS写出三角箭头，以及会使用到的一些场景。原理比较简单，是利用border来进行一些设置。</p>
-</blockquote>
-<h3 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h3><p>当元素宽高为0，设置border宽度，其他边框为透明颜色时，可以形成一个三角形。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">  .demo1 &#123;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    border: 10px solid transparent;</div><div class="line">    border-left-color: red;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://codepen.io/znsimple/pen/XNzLXv" target="_blank" rel="external">CSS三角形demo</a></p>
-<h3 id="三角箭头"><a href="#三角箭头" class="headerlink" title="三角箭头"></a>三角箭头</h3><p>利用伪元素制造两个三角形并进行重叠，形成一个三角形箭头。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">.demo2 &#123;</div><div class="line">  porition: relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.demo2:before, .demo2:after &#123;</div><div class="line">  border: 10px solid transparent;</div><div class="line">  border-left: 10px solid #fff;</div><div class="line">  width: 0;</div><div class="line">  height: 0;</div><div class="line">  position: absolute;</div><div class="line">  top: 0;</div><div class="line">  left: -2px;</div><div class="line">  content: ' ';</div><div class="line">&#125;</div><div class="line"></div><div class="line">.demo2:before &#123;</div><div class="line">  border-left-color: red;</div><div class="line">  left: 0px;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://codepen.io/znsimple/pen/woPVRa" target="_blank" rel="external">CSS三角箭头demo</a></p>
-<h3 id="与矩形组合的提示框"><a href="#与矩形组合的提示框" class="headerlink" title="与矩形组合的提示框"></a>与矩形组合的提示框</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">.demo2 &#123;</div><div class="line">  position: relative;</div><div class="line">  width: 100px;</div><div class="line">  height: 100px;</div><div class="line">  border: 2px solid red</div><div class="line">&#125;</div><div class="line"></div><div class="line">.demo2:before, .demo2:after &#123;</div><div class="line">  border: 10px solid transparent;</div><div class="line">  border-left: 10px solid #fff;</div><div class="line">  width: 0;</div><div class="line">  height: 0;</div><div class="line">  position: absolute;</div><div class="line">  top: 50%;</div><div class="line">  right: -20px;</div><div class="line">  content: ' ';</div><div class="line">  transform: translateY(-50%);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.demo2:before &#123;</div><div class="line">  border-left-color: red;</div><div class="line">  right: -22px;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://codepen.io/znsimple/pen/BQYXrv" target="_blank" rel="external">提示框</a></p>
+                <p>数组去重<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>]</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// obj map</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line">  <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">  arr.forEach(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (!o[v]) &#123;</div><div class="line">      o[v] = <span class="number">1</span>;</div><div class="line">      newArr.push(v);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// for..for..splice</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, lenI = arr.length; i &lt; lenI; i++) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>, lenJ = arr.length; j &lt; lenJ; j++) &#123;</div><div class="line">      <span class="keyword">if</span> (arr[i] === arr[j]) &#123;</div><div class="line">        arr.splice(j, <span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// indexOf</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'type error'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line">  arr.forEach(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (newArr.indexOf(v) === <span class="number">-1</span>) &#123;</div><div class="line">      newArr.push(v);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// sort, 相邻值进行比对</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  arr = arr.sort();</div><div class="line">  <span class="keyword">var</span> newArr = [arr[<span class="number">0</span>]];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>, len = arr.length; i &lt;= len; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (arr[i] !== arr[i<span class="number">-1</span>] &amp;&amp; i &lt; len) &#123;</div><div class="line">      newArr.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filter</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  arr.filter(<span class="function">(<span class="params">value, index, arr</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> arr.indexOf(value) === index;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reduce + includes</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">prev,cur</span>) =&gt;</span> prev.includes(cur) ? prev : [...prev,cur], []);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 
                 <hr>
@@ -210,10 +208,10 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/01/10/learn-promise/" data-toggle="tooltip" data-placement="top" title="浅谈JavaScript中Promise的使用">&larr; Previous Post</a>
-                        </li>
                     
+                        <li class="next">
+                            <a href="/2017/01/10/learn-promise/" data-toggle="tooltip" data-placement="top" title="浅谈JavaScript中Promise的使用">Next Post &rarr;</a>
+                        </li>
                     
                 </ul>
 
@@ -245,7 +243,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#css" title="css">css</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#Array" title="Array">Array</a>
                         
                     </div>
                 </section>
@@ -275,8 +275,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "https://simplezn.top/2016/12/05/test/";
-    var disqus_url = "https://simplezn.top/2016/12/05/test/";
+    var disqus_identifier = "https://simplezn.top/2018/10/15/JavaScript数组去重/";
+    var disqus_url = "https://simplezn.top/2018/10/15/JavaScript数组去重/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

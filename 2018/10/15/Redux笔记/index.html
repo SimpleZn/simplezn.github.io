@@ -13,11 +13,11 @@
 
     <title>
         
-          JavaScript数组去重 - SimpleZn | SimpleZn&#39;s Blog
+          Redux 笔记 - SimpleZn | SimpleZn&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://simplezn.top/2018/10/15/JavaScript数组去重/">
+    <link rel="canonical" href="https://simplezn.top/2018/10/15/Redux笔记/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -167,10 +167,12 @@
                         
                           <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
-                          <a class="tag" href="/tags/#Array" title="Array">Array</a>
+                          <a class="tag" href="/tags/#React" title="React">React</a>
+                        
+                          <a class="tag" href="/tags/#Redux" title="Redux">Redux</a>
                         
                     </div>
-                    <h1>JavaScript数组去重</h1>
+                    <h1>Redux 笔记</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by SimpleZn on
@@ -193,13 +195,43 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>数组去重<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>]</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// obj map</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line">  <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">  arr.forEach(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (!o[v]) &#123;</div><div class="line">      o[v] = <span class="number">1</span>;</div><div class="line">      newArr.push(v);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// for..for..splice</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, lenI = arr.length; i &lt; lenI; i++) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>, lenJ = arr.length; j &lt; lenJ; j++) &#123;</div><div class="line">      <span class="keyword">if</span> (arr[i] === arr[j]) &#123;</div><div class="line">        arr.splice(j, <span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// indexOf</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'type error'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line">  arr.forEach(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (newArr.indexOf(v) === <span class="number">-1</span>) &#123;</div><div class="line">      newArr.push(v);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// sort, 相邻值进行比对</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  arr = arr.sort();</div><div class="line">  <span class="keyword">var</span> newArr = [arr[<span class="number">0</span>]];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>, len = arr.length; i &lt;= len; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (arr[i] !== arr[i<span class="number">-1</span>] &amp;&amp; i &lt; len) &#123;</div><div class="line">      newArr.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filter</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resetArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  arr.filter(<span class="function">(<span class="params">value, index, arr</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> arr.indexOf(value) === index;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reduce + includes</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">prev,cur</span>) =&gt;</span> prev.includes(cur) ? prev : [...prev,cur], []);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+                <p>Redux<br>状态管理方案</p>
+<h3 id="Redux-Three-principles"><a href="#Redux-Three-principles" class="headerlink" title="Redux Three principles:"></a>Redux Three principles:</h3><p>  Single souce of truth 单一数据源</p>
+<p>  State is read-only 状态只读</p>
+<p>  Changes are made with pure functions (reducers) 使用纯函数修改数据</p>
+<pre><code>(state, action) =&gt; newState
+</code></pre><p>使用单一数据源有以下优点：<br>  logging of all updates 打印所有更新的log日志<br>  API handling<br>  undo/redo<br>  state persistence 数据持久化<br>  “time-travel debugging” 时间旅行调错<br>  error reports with full snapshorts of app state</p>
+<h3 id="Why-use-Redux-with-React"><a href="#Why-use-Redux-with-React" class="headerlink" title="Why use Redux with React?"></a>Why use Redux with React?</h3><p>  predictable state updates,<br>  centralized state handling</p>
+<p>  方便调试，可以前进或者后退，并且可以查看到对应的state和ui<br>  easier for component to retrieve the data it needs, without having to pass it as props all the way down from top-level components<br>  webpack提供的热更新，通过Redux，可以在更新组件的时候，并保留它的状态。</p>
+<h3 id="Core-Concepts"><a href="#Core-Concepts" class="headerlink" title="Core Concepts:"></a>Core Concepts:</h3><p>  State<br>    App state is stored in plain objects.</p>
+<p>  Actions<br>    To change something in the state, you need to dispatch an action.</p>
+<p>  Action creators<br>    a good practice</p>
+<p>  Reduces<br>    All state update logic lives in functions called reducers.<br>    smaller functions can be composed together into larger functions.<br>    pure functions with no side effects.<br>    (state, action) =&gt; newState<br>    return new state , rather then directly modifing inputs.</p>
+<p>  Combine Reducers<br>    combineReducers method<br>    a root reducer function that calls other reducers , splitting up the job of updating the Redux state object.</p>
+<p>  Store<br>    contains the current state value.<br>    createStore method: takes the root reducer function and an optional preloaded state value.</p>
+<pre><code>dispatch: starts a state update with provided action object
+getState: returns the current stored state value
+subscribe: accepts a callback function that will be run every time an action is dispatched
+</code></pre><h3 id="Redux-Data-Flow"><a href="#Redux-Data-Flow" class="headerlink" title="Redux Data Flow"></a>Redux Data Flow</h3><p>  An action is dispatched(often in response to user interaction)<br>  The root reducer function is called with the current state and the dispatched action.<br>    That root reducer may delegate the work to other smaller reducer functions.It then returns the new statel<br>  The store notifies subscribers by running their callback functions.<br>  Subscribers(usually UI components) can retrive the updated state and re-render</p>
+<h3 id="Using-Redux-with-React"><a href="#Using-Redux-with-React" class="headerlink" title="Using Redux with React"></a>Using Redux with React</h3><p>  React-Redux provides bindings between React and Redux.</p>
+<p>  The Connect function generates wrapper container components that subscribe to the store,<br>    so you don’t have to write store subscription code for every component that needs to talk to the store.]</p>
+<p>  Any component  in the application can be wrapped with connect and “connected” to the store.</p>
+<p>  Finnaly, putting a <provider> component around your root component makes the store accessible to all connected components.</provider></p>
+<p>  connect function<br>    mapStateToProps: called every time the store state changes. returned object becomes a prop for the wrapped component.<br>    mapDispatchToProps: called once on componnet creation<br>    export default connect(mapStateToProps, actions)(Account);</p>
+<h3 id="Redux-Middleware"><a href="#Redux-Middleware" class="headerlink" title="Redux Middleware"></a>Redux Middleware</h3><p>  A Redux store can be configured to use middleware.<br>  run code after an action is dispatched, but before it reaches the reducer.<br>  Middleware form a pipeline that wraps around the dispatch function.<br>  A middleware can inspect actions and state, modify actions, dispatch other actions, stop actions from reaching the reducers, and much more.<br>  a good place for managing persistent server connects via websockets, and other similar behavior.</p>
+<p>  applyMiddleware<br>    sets up middleware pipeline for use with the store.<br>    const middleware = storeAPI =&gt;next =&gt;action =&gt; { /<em>do work here</em>/ }<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> logger = <span class="function"><span class="params">storeAPI</span> =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'dispatching'</span>, action);</div><div class="line">  <span class="keyword">let</span> result = next(action)</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'next state'</span>, storeAPI.getState());</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Redux-Side-Effects"><a href="#Redux-Side-Effects" class="headerlink" title="Redux Side Effects"></a>Redux Side Effects</h3><p>  The Redux store is completely synchronous by default. Dispatching an action does not return until after the reducer function has run and the new state is available.</p>
+<p>  AJAX calls and timeouts are known as Side effects. The async logic often lives in action creators.</p>
+<p>  redux-thunk: pass functions to dispatch</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createThunkMiddleware</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">&#123;dispatch, getState&#125;</span>) =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">'function'</span>) &#123;</div><div class="line">      <span class="keyword">return</span> action(dispatch, getState);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> next(action);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> thunk = createThunkMiddleware();</div></pre></td></tr></table></figure>
+<p>  redux-saga: uses ES6 generators to control pausable functions.</p>
+<h3 id="React-and-Redux-in-practice"><a href="#React-and-Redux-in-practice" class="headerlink" title="React and Redux in practice"></a>React and Redux in practice</h3><h3 id="When-Should-You-Use-Redux"><a href="#When-Should-You-Use-Redux" class="headerlink" title="When Should You Use Redux?"></a>When Should You Use Redux?</h3><p>  Rules of what data goes in Redux:</p>
+<pre><code>Do other parts of the application care about this data
+Do you need to be able to create further derived data based on this original data.
+Is the same data being used to drive multiple components?
+Is there value to you in being able to restore this state to a given point in time.
+Do you want to cache the data.
+</code></pre><h3 id="Redux-Ecosystem"><a href="#Redux-Ecosystem" class="headerlink" title="Redux Ecosystem"></a>Redux Ecosystem</h3><p>  Generating actions, action creators and reducers<br>  Loading and updating normalized data<br>  Handling side effects<br>  Updating data immutably<br>  Persisting store state between page reloads<br>  Making network calls</p>
 
 
                 <hr>
@@ -208,9 +240,13 @@
 
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2018/10/15/JavaScript数组去重/" data-toggle="tooltip" data-placement="top" title="JavaScript数组去重">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2018/10/15/Redux笔记/" data-toggle="tooltip" data-placement="top" title="Redux 笔记">Next Post &rarr;</a>
+                            <a href="/2017/01/10/learn-promise/" data-toggle="tooltip" data-placement="top" title="浅谈JavaScript中Promise的使用">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -245,7 +281,9 @@
                        
                           <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
-                          <a class="tag" href="/tags/#Array" title="Array">Array</a>
+                          <a class="tag" href="/tags/#React" title="React">React</a>
+                        
+                          <a class="tag" href="/tags/#Redux" title="Redux">Redux</a>
                         
                     </div>
                 </section>
@@ -275,8 +313,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "https://simplezn.top/2018/10/15/JavaScript数组去重/";
-    var disqus_url = "https://simplezn.top/2018/10/15/JavaScript数组去重/";
+    var disqus_identifier = "https://simplezn.top/2018/10/15/Redux笔记/";
+    var disqus_url = "https://simplezn.top/2018/10/15/Redux笔记/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
